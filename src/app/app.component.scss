@@ -1,0 +1,114 @@
+$input-radius: 20px;
+$inner-radius: 24px;
+$outer-radius: 48px;
+$gap: 0.5rem;
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.pod-layout {
+    width: 100%;
+    display: grid;
+    .pod-title {
+        text-align: center;
+        margin-bottom: $gap;
+        h1 {
+            margin-bottom: 0;
+        }
+    }
+    .pod-sheet-layout {
+        background-color: rgb(36, 36, 36);
+        color: whitesmoke;
+        padding: 1rem;
+        border-radius: $outer-radius;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: $gap;
+        .pod-inner-section {
+            background-color: whitesmoke;
+            color: black;
+            padding: 1rem;
+            border-radius: $inner-radius;
+            .name-section {
+                display: grid;
+                grid-template-columns: auto 1fr auto;
+                grid-gap: $gap;
+                border-bottom: 1px solid black;
+                input {
+                    border: none;
+                    background-color: whitesmoke;
+                }
+            }
+            .survival-section {
+                .title-section {
+                    display: grid;
+                    grid-template-columns: 1fr auto;
+                    margin-bottom: $gap;
+                    border-bottom: 1px solid black;
+                }
+                .survival-layout {
+                    display: grid;
+                    grid-template-columns: 10rem 25% 25%;
+                    grid-gap: $gap;
+                    input {
+                        text-align: center;
+                        border-radius: $input-radius;
+                    }
+                    .current-survival {
+                        font-size: 5rem;
+                    }
+                    .max-gain-section {
+                        display: grid;
+                        grid-template-columns: 1fr;
+                        grid-template-rows: repeat(2, 1fr);
+                        .max-gain-subsection {
+                            display: grid;
+                            grid-template-rows: 1fr auto;
+                            input {
+                                width: 90%;
+                            }
+                            label {
+                                place-self: start center;
+                            }
+                        }
+                    }
+                }
+            }
+            .stats-section {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: auto repeat(4, 1fr);
+                grid-template-areas: 
+                    "tit    tit"
+                    "mov    acc"
+                    "str    eva"
+                    "luc    spd"
+                    "lum    lum";
+                grid-gap: $gap;
+                input {
+                    height: 5rem;
+                    width: 5rem;
+                    font-size: 3rem;
+                    text-align: center;
+                    border-radius: $input-radius;
+                }
+                .title-section {
+                    margin-bottom: $gap;
+                    border-bottom: 1px solid black;
+                    grid-area: tit;
+                }
+                .stat {
+                    display: grid;
+                    place-content: center;
+                    text-align: center;
+                    &.lum {
+                        grid-area: lum;
+                    }
+                }
+            }
+        }
+    }
+}
