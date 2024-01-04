@@ -45,7 +45,7 @@
           </span>
           <span class="survival-actions-section flex-column">
             <span>
-              <input type="checkbox" id="dodge" name="dodge"/>
+              <input checked type="checkbox" id="dodge" name="dodge"/>
               <label for="dodge"><small>DODGE</small></label>
             </span>
 
@@ -72,41 +72,7 @@
         </span>
       </span>
     </div>
-    <div class="pod-inner-section">
-      <span class="stats-section">
-        <span class="title-section">
-          <strong>STATS</strong>
-          <span>
-            <label for="lum"><small><strong>LUMI</strong></small></label>
-            <input placeholder="0" type="number" name="lum">
-          </span>
-        </span>
-        <span class="stat">
-          <input placeholder="5" type="number" name="move">
-          <label for="move"><small>MOVEMENT</small></label>
-        </span>
-        <span class="stat">
-          <input placeholder="0" type="number" name="acc">
-          <label for="acc"><small>ACCURACY</small></label>
-        </span>
-        <span class="stat">
-          <input placeholder="0" type="number" name="str">
-          <label for="str"><small>STRENGTH</small></label>
-        </span>
-        <span class="stat">
-          <input placeholder="0" type="number" name="eva">
-          <label for="eva"><small>EVASION</small></label>
-        </span>
-        <span class="stat">
-          <input placeholder="0" type="number" name="luc">
-          <label for="luc"><small>LUCK</small></label>
-        </span>
-        <span class="stat">
-          <input placeholder="0" type="number" name="spd">
-          <label for="spd"><small>SPEED</small></label>
-        </span>
-      </span>
-    </div>
+    <app-stats></app-stats>
     <app-armor></app-armor>
   </div>
 </span>

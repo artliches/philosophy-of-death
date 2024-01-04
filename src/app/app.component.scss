@@ -1,10 +1,5 @@
 @import '../assets/vars.scss';
 
-.flex-column {
-    display: flex;
-    flex-direction: column;
-}
-
 .pod-layout {
     width: 100%;
     display: grid;
@@ -63,38 +58,6 @@
                                 place-self: start center;
                             }
                         }
-                    }
-                }
-            }
-            .stats-section {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                grid-template-rows: auto repeat(2, 1fr);
-                grid-template-areas: 
-                    "tit    tit     tit"
-                    "mov    acc     str"
-                    "eva    luc    spd";
-                grid-gap: $gap;
-                .title-section {
-                    grid-template-columns: 1fr 15%;
-                    grid-area: tit;
-                    input {
-                        text-align: center;
-                        width: 40%;
-                        border: none;
-                        background-color: whitesmoke;
-                    }
-                }
-                .stat {
-                    display: grid;
-                    place-content: center;
-                    text-align: center;
-                    input {
-                        height: 5rem;
-                        width: 5rem;
-                        font-size: 3rem;
-                        text-align: center;
-                        border-radius: $input-radius;
                     }
                 }
             }
