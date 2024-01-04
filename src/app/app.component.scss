@@ -36,7 +36,7 @@
             }
             .survival-section {
                 .title-section {
-                    grid-template-columns: 1fr auto;
+                    grid-template-columns: 1fr repeat(2, auto);
                 }
                 .survival-layout {
                     display: grid;

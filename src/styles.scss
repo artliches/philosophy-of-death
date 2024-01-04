@@ -42,3 +42,9 @@ body {
     display: flex;
     flex-direction: column;
 }
+
+.two-column-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: $gap;
+}

@@ -1,9 +1,6 @@
 @import '../../assets/vars.scss';
 
 .insane-layout {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: $gap;
     border-bottom: 1px solid black;
     margin-bottom: $gap;
 }
@@ -13,9 +10,11 @@
     grid-template-columns: auto 1fr;
     grid-template-rows: auto 1fr;
     column-gap: $gap;
-    border-bottom: 1px solid black;
-    padding-bottom: $gap;
-    margin-bottom: $gap;
+    &:not(:last-of-type) {
+        border-bottom: 1px solid black;
+        padding-bottom: $gap;
+        margin-bottom: $gap;
+    }
     grid-template-areas:
         "subtitle   injuries"
         "armor      injuries";
@@ -35,9 +34,6 @@
             grid-template-areas:
                 "check  label"
                 ".      descrip";
-            input {
-                grid-area: check;
-            }
             label {
                 grid-area: label;
                 place-self: center start;
@@ -45,16 +41,16 @@
             small {
                 grid-area: descrip;
             }
-            &.blind {
+            &.multi-check {
                 grid-template-columns: repeat(2, auto) 1fr;
                 grid-template-areas: 
                     "check1     check2      label"
                     ".          descrip     descrip";
-                input.blind1 {
-                    grid-area: check1;
-                }
-                input.blind2 {
-                    grid-area: check2;
+                &.five {
+                    grid-template-columns: repeat(5, auto) 1fr;
+                    grid-template-areas: 
+                        "1     2    3       4       5      label"
+                        ".     descrip     descrip  descrip     descrip     descrip";
                 }
             }
         }

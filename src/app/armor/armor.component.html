@@ -3,7 +3,7 @@
         <strong>ARMOR & INJURIES</strong>
     </span>
     <span class="armor-layout">
-        <span class="insane-layout">
+        <span class="insane-layout two-column-grid">
             <span class="flex-column">
                 <span class="subtitle-section">
                     <strong>BRAIN</strong>
@@ -22,7 +22,7 @@
                 <label for="tor"><small>WHEN ROLLING FOR BRAIN TRAUMA, SUBTRACT <strong>TORMENT</strong> FROM RESULT</small></label>
             </span>
         </span>
-        <span class="corpus-layout">
+        <span class="corpus-layout head">
             <span class="subtitle-section">
                 <strong>HEAD</strong>
                 <span>
@@ -42,16 +42,170 @@
                     <label for="deaf"><small><strong>DEAF</strong></small></label>
                     <small>-1 evasion.</small>
                 </span>
-                <span class="injury-descrip-layout blind">
-                    <input class="blind1" type="checkbox" name="blind1">
-                    <input class="blind2" type="checkbox" name="blind2">
+                <span class="injury-descrip-layout multi-check">
+                    <input class="check1" type="checkbox" name="blind1">
+                    <input class="check2" type="checkbox" name="blind2">
                     <label for="blind2"><small><strong>BLIND</strong></small></label>
                     <small>-1 accuracy / -4 accuracy & retire.</small>
                 </span>
                 <span class="injury-descrip-layout">
                     <input type="checkbox" name="sJaw">
                     <label for="sJaw"><small><strong>SHATTERED JAW</strong></small></label>
-                    <small>no consume & encourage.</small>
+                    <small>no consume or encourage.</small>
+                </span>
+            </span>
+        </span>
+
+        <span class="corpus-layout arm">
+            <span class="subtitle-section">
+                <strong>ARMS</strong>
+                <span class="checkbox-label-layout">
+                    <input type="checkbox" name="lightArm">
+                    <label for="lightArm">L</label>
+
+                    <input class="heavy" type="checkbox" name="heavyArm">
+                    <label for="heavyArm">H</label>
+                </span>
+            </span>
+            <input class="armor" placeholder="0" type="number" name="arm">
+            <span class="injury-layout flex-column">
+                <span class="injury-descrip-layout multi-check">
+                    <input class="check1" type="checkbox" name="disArm1">
+                    <input class="check2" type="checkbox" name="disArm2">
+                    <label for="disArm"><small><strong>DISMEMBERED ARM</strong></small></label>
+                    <small>no two-handed / no weapons.</small>
+                </span>
+                <span class="injury-descrip-layout">
+                    <input type="checkbox" name="rup">
+                    <label for="rup"><small><strong>RUPTURED MUSCLE</strong></small></label>
+                    <small>no fighting arts or knowledges.</small>
+                </span>
+                <span class="injury-descrip-layout multi-check five">
+                    <input type="checkbox" name="cont1">
+                    <input type="checkbox" name="cont2">
+                    <input type="checkbox" name="cont3">
+                    <input type="checkbox" name="cont4">
+                    <input type="checkbox" name="cont5">
+                    <label for="cont5"><small><strong>CONTRACTURE</strong></small></label>
+                    <small>-1 accuracy.</small>
+                </span>
+                <span class="injury-descrip-layout multi-check">
+                    <input type="checkbox" name="bArm1">
+                    <input type="checkbox" name="dArm2">
+                    <label for="bArm2"><small><strong>BROKEN ARM</strong></small></label>
+                    <small>-1 accuracy & -1 strength.</small>
+                </span>
+            </span>
+        </span>
+
+        <span class="corpus-layout body">
+            <span class="subtitle-section">
+                <strong>BODY</strong>
+                <span class="checkbox-label-layout">
+                    <input type="checkbox" name="lightBody">
+                    <label for="lightBody">L</label>
+
+                    <input class="heavy" type="checkbox" name="heavyBody">
+                    <label for="heavyBody">H</label>
+                </span>
+            </span>
+            <input class="armor" placeholder="0" type="number" name="body">
+            <span class="injury-layout flex-column">
+                <span class="injury-descrip-layout multi-check five">
+                    <input type="checkbox" name="gape1">
+                    <input type="checkbox" name="gape2">
+                    <input type="checkbox" name="gape3">
+                    <input type="checkbox" name="gape4">
+                    <input type="checkbox" name="gape5">
+                    <label for="gape5"><small><strong>GAPING CHEST WOUND</strong></small></label>
+                    <small>-1 strength.</small>
+                </span>
+                <span class="injury-descrip-layout">
+                    <input type="checkbox" name="dBack">
+                    <label for="dBack"><small><strong>DESTROYED BACK</strong></small></label>
+                    <small>-2 movement & no gear with +2 strength.</small>
+                </span>
+                <span class="injury-descrip-layout multi-check five">
+                    <input type="checkbox" name="rib1">
+                    <input type="checkbox" name="rib2">
+                    <input type="checkbox" name="rib3">
+                    <input type="checkbox" name="rib4">
+                    <input type="checkbox" name="rib5">
+                    <label for="rib5"><small><strong>BROKEN RIB</strong></small></label>
+                    <small>-1 speed.</small>
+                </span>
+            </span>
+        </span>
+
+        <span class="corpus-layout waist">
+            <span class="subtitle-section">
+                <strong>WAIST</strong>
+                <span class="checkbox-label-layout">
+                    <input type="checkbox" name="lightWaist">
+                    <label for="lightWaist">L</label>
+
+                    <input class="heavy" type="checkbox" name="heavyWaist">
+                    <label for="heavyWaist">H</label>
+                </span>
+            </span>
+            <input class="armor" placeholder="0" type="number" name="waist">
+            <span class="injury-layout flex-column">
+                <span class="injury-descrip-layout">
+                    <input type="checkbox" name="iPro">
+                    <label for="iPro"><small><strong>INTESTINAL PROLAPSE</strong></small></label>
+                    <small>-no gear on waist.</small>
+                </span>
+                <span class="injury-descrip-layout multi-check five">
+                    <input type="checkbox" name="warp1">
+                    <input type="checkbox" name="warp2">
+                    <input type="checkbox" name="warp3">
+                    <input type="checkbox" name="warp4">
+                    <input type="checkbox" name="warp5">
+                    <label for="warp5"><small><strong>WARPED PELVIS</strong></small></label>
+                    <small>-1 luck.</small>
+                </span>
+                <span class="injury-descrip-layout">
+                    <input type="checkbox" name="dGen">
+                    <label for="dGen"><small><strong>DESTROYED GENITALS</strong></small></label>
+                    <small>no intimacy.</small>
+                </span>
+                <span class="injury-descrip-layout">
+                    <input type="checkbox" name="bHip">
+                    <label for="bHip"><small><strong>BROKEN HIP</strong></small></label>
+                    <small>no dodge & -1 movement.</small>
+                </span>
+            </span>
+        </span>
+
+        <span class="corpus-layout leg">
+            <span class="subtitle-section">
+                <strong>LEGS</strong>
+                <span class="checkbox-label-layout">
+                    <input type="checkbox" name="lightLeg">
+                    <label for="lightLeg">L</label>
+
+                    <input class="heavy" type="checkbox" name="heavyLeg">
+                    <label for="heavyLeg">H</label>
+                </span>
+            </span>
+            <input class="armor" placeholder="0" type="number" name="leg">
+            <span class="injury-layout flex-column">
+                <span class="injury-descrip-layout multi-check">
+                    <input type="checkbox" name="dLeg1">
+                    <input type="checkbox" name="dLeg2">
+                    <label for="dLeg2"><small><strong>DISMEMBERED LEG</strong></small></label>
+                    <small>-2 movement & no dash / -4 movement & retire.</small>
+                </span>
+                <span class="injury-descrip-layout">
+                    <input type="checkbox" name="ham">
+                    <label for="ham"><small><strong>HAMSTRUNG</strong></small></label>
+                    <small>no fighting arts, abilities, or knowledges.</small>
+                </span>
+                <span class="injury-descrip-layout multi-check">
+                    <input type="checkbox" name="bLeg1">
+                    <input type="checkbox" name="bLeg2">
+                    <label for="bLeg2"><small><strong>BROKEN LEG</strong></small></label>
+                    <small>-1 movement.</small>
                 </span>
             </span>
         </span>
