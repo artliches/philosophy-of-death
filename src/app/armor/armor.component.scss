@@ -1,0 +1,114 @@
+@import '../../assets/vars.scss';
+
+.insane-layout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: $gap;
+    border-bottom: 1px solid black;
+    margin-bottom: $gap;
+}
+
+.corpus-layout {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+    column-gap: $gap;
+    border-bottom: 1px solid black;
+    padding-bottom: $gap;
+    margin-bottom: $gap;
+    grid-template-areas:
+        "subtitle   injuries"
+        "armor      injuries";
+    .subtitle-section {
+        grid-area: subtitle;
+    }
+    .armor {
+        grid-area: armor;
+    }
+    .injury-layout {
+        grid-area: injuries;
+        display: grid;
+        .injury-descrip-layout {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            grid-template-rows: repeat(2, auto);
+            grid-template-areas:
+                "check  label"
+                ".      descrip";
+            input {
+                grid-area: check;
+            }
+            label {
+                grid-area: label;
+                place-self: center start;
+            }
+            small {
+                grid-area: descrip;
+            }
+            &.blind {
+                grid-template-columns: repeat(2, auto) 1fr;
+                grid-template-areas: 
+                    "check1     check2      label"
+                    ".          descrip     descrip";
+                input.blind1 {
+                    grid-area: check1;
+                }
+                input.blind2 {
+                    grid-area: check2;
+                }
+            }
+        }
+    }
+}
+
+.subtitle-section {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    .heavy {
+        width: 1em;
+        height:1em;
+        background-color: white;
+        vertical-align: sub;
+        border: 3px solid black;
+        appearance: none;
+        -webkit-appearance: none;
+        outline: none;
+        cursor: pointer;
+        &:checked {
+            background-color: black;
+        }
+    }
+}
+
+.flex-column {
+    align-items: center;
+    .subtitle-section, .checkbox-label-layout {
+        display: grid;
+        grid-template-columns: 1fr auto;
+
+        &.multiInjury {
+            grid-template-columns: repeat(2, auto);
+            grid-template-rows: repeat(2, auto);
+            row-gap: 0rem;
+            strong {
+                grid-column: 1 / span 2;
+                grid-row: 1;
+                place-self: center;
+            }
+        }
+    }
+    .subtitle-section {
+        grid-gap: $gap;
+    }
+    label {
+        text-align: center;
+    }
+}
+
+input:not([type="checkbox"]) {
+    height: 5rem;
+    width: 5rem;
+    font-size: 3rem;
+    text-align: center;
+    border-radius: $input-radius;
+}

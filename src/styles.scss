@@ -1,8 +1,16 @@
+@import 'assets/vars.scss';
+
 @font-face {
     font-family: "Roboto Mono";
     src: local("Roboto Mono"), url(./assets/fonts/RobotoMono.ttf) format('opentype');
     font-weight: 100 1000;
 }
+
+// @font-face {
+//     font-family: "CATS Goth";
+//     src: local("CATSchmalfetteThannhaeuser"), url(./assets/fonts/CATSchmalfetteThannhaeuser.ttf) format('opentype');
+//     font-weight: 100 1000;
+// }
 
 body {
     background-color: black;
@@ -16,4 +24,21 @@ body {
         font-size: .5em;
         vertical-align: middle;
     }
+
+    .pod-inner-section {
+        background-color: whitesmoke;
+        color: black;
+        padding: 1rem;
+        border-radius: $inner-radius;
+        .title-section {
+            display: grid;
+            margin-bottom: $gap;
+            border-bottom: 1px solid black;
+        }
+    }
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
 }
