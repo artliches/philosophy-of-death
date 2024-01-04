@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ArmorComponent } from './armor/armor.component';
 import { StatsComponent } from './stats/stats.component';
+import { SurvivalComponent } from './survival/survival.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ArmorComponent,
-    StatsComponent
+    StatsComponent,
+    SurvivalComponent
   ],
   imports: [
     BrowserModule,

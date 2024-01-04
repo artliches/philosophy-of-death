@@ -1,0 +1,54 @@
+<div class="pod-inner-section">
+    <span class="survival-section">
+      <span (click)="toggleCollapse()" class="title-section">
+        <strong>SURVIVAL</strong>
+        <span>
+          <input type="checkbox" name="noSpend">
+          <label for="noSpend"><small>CANNOT SPEND SURVIVAL</small></label>
+        </span>
+        <span>
+          <input type="checkbox" name="noGain">
+          <label for="noGain"><small>CANNOT GAIN SURVIVAL</small></label>
+        </span>
+      </span>
+      <span *ngIf="show" class="survival-layout">
+        <input class="current-survival" type="number">
+        <span class="max-gain-section">
+          <span class="max-gain-subsection">
+            <input placeholder="1" type="number" name="max">
+            <label for="max"><small>MAX</small></label>
+          </span>
+          <span class="max-gain-subsection">
+            <input placeholder="0" type="number" name="onDepart">
+            <label for="onDepart"><small>GAIN ON DEPART</small></label>
+          </span>
+        </span>
+        <span class="survival-actions-section flex-column">
+          <span>
+            <input checked type="checkbox" id="dodge" name="dodge"/>
+            <label for="dodge"><small>DODGE</small></label>
+          </span>
+
+          <span>
+            <input type="checkbox" id="encourage" name="encourage"/>
+            <label for="encourage"><small>ENCOURAGE</small></label>
+          </span>
+
+          <span>
+            <input type="checkbox" id="surge" name="surge"/>
+            <label for="surge"><small>SURGE</small></label>
+          </span>
+
+          <span>
+            <input type="checkbox" id="dash" name="dash"/>
+            <label for="dash"><small>DASH</small></label>
+          </span>
+
+          <span>
+            <input type="checkbox" id="fist" name="fist"/>
+            <label for="fist"><small>FIST PUMP</small></label>
+          </span>
+        </span>
+      </span>
+    </span>
+  </div>
