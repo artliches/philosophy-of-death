@@ -1,8 +1,8 @@
 <div class="pod-inner-section">
     <span class="title-section">
-        <strong>ARMOR & INJURIES</strong>
+        <strong (click)="toggleCollapse()">ARMOR & INJURIES</strong>
     </span>
-    <span class="armor-layout">
+    <span *ngIf="show" class="armor-layout">
         <span class="insane-layout two-column-grid">
             <span class="flex-column">
                 <span class="subtitle-section">

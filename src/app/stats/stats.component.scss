@@ -1,43 +1,39 @@
 @import '../../assets/vars.scss';
 
-.stats-section {
+.title-section {
+    grid-template-columns: 1fr 15%;
+    grid-area: tit;
+    input {
+        text-align: center;
+        width: 40%;
+        border: none;
+        background-color: whitesmoke;
+    }
+}
+.stats-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto repeat(2, 1fr);
-    grid-template-areas: 
-        "tit    tit     tit"
-        "mov    acc     str"
-        "eva    luc    spd";
+    grid-template-rows: repeat(2, 1fr);
     grid-gap: $gap;
-    .title-section {
-        grid-template-columns: 1fr 15%;
-        grid-area: tit;
-        input {
-            text-align: center;
-            width: 40%;
-            border: none;
-            background-color: whitesmoke;
-        }
-    }
-    .stat {
-        display: grid;
-        place-content: center;
+}
+.stat {
+    display: grid;
+    place-content: center;
+    text-align: center;
+    input:not(.temp) {
+        height: 5rem;
+        width: 5rem;
+        font-size: 3rem;
         text-align: center;
-        input:not(.temp) {
-            height: 5rem;
-            width: 5rem;
-            font-size: 3rem;
-            text-align: center;
-            border-radius: $input-radius;
-        }
-        input.temp {
-            height: 1rem;
-            width: 1rem;
-            font-size: 1rem;
-            text-align: center;
-            border: none;
-            background-color: whitesmoke;
-            padding-right: $gap;
-        }
+        border-radius: $input-radius;
+    }
+    input.temp {
+        height: 1rem;
+        width: 1rem;
+        font-size: 1rem;
+        text-align: center;
+        border: none;
+        background-color: whitesmoke;
+        padding-right: $gap;
     }
 }

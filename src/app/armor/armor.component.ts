@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./armor.component.scss']
 })
 export class ArmorComponent implements OnInit {
+  show: boolean = true;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  toggleCollapse() {
+    this.show = !this.show;
   }
 
 }
