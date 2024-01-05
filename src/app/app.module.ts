@@ -6,17 +6,21 @@ import { AppComponent } from './app.component';
 import { ArmorComponent } from './armor/armor.component';
 import { StatsComponent } from './stats/stats.component';
 import { SurvivalComponent } from './survival/survival.component';
+import { NameXpComponent } from './name-xp/name-xp.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     ArmorComponent,
     StatsComponent,
-    SurvivalComponent
+    SurvivalComponent,
+    NameXpComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

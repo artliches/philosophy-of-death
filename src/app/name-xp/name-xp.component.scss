@@ -1,0 +1,38 @@
+@import '../../assets/vars.scss';
+
+.name-section {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-gap: $gap;
+    border-bottom: 1px solid black;
+    input {
+        border: none;
+        background-color: whitesmoke;
+    }
+}
+
+.checkbox-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+small > strong {
+    text-decoration: underline;
+}
+
+.xp-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, auto);
+}
+
+.weapon-checkbox-layout {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+}
+
+.mastery-info {
+    padding-top: $gap;
+    gap: $gap;
+}

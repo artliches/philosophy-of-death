@@ -48,3 +48,34 @@ body {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: $gap;
 }
+
+.heavy {
+    width: 1em;
+    height:1em;
+    background-color: white;
+    vertical-align: sub;
+    border: 3px solid black;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+    &:checked {
+        background-color: black;
+    }
+}
+
+select {
+    border: none;
+    background-color: whitesmoke;
+    border-bottom: 1px solid black;
+    font-family: "Roboto Mono", sans-serif;
+    font-size: .7em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.bottom-border {
+    border-bottom: 1px solid black;
+    margin-bottom: $gap;
+    padding-bottom: $gap;
+}

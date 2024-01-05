@@ -60,20 +60,6 @@
 .subtitle-section {
     display: grid;
     grid-template-columns: 1fr auto;
-    .heavy {
-        width: 1em;
-        height:1em;
-        background-color: white;
-        vertical-align: sub;
-        border: 3px solid black;
-        appearance: none;
-        -webkit-appearance: none;
-        outline: none;
-        cursor: pointer;
-        &:checked {
-            background-color: black;
-        }
-    }
 }
 
 .flex-column {

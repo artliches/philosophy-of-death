@@ -18,17 +18,5 @@
         display: grid;
         grid-template-columns: 1fr;
         grid-gap: $gap;
-        .pod-inner-section {
-            .name-section {
-                display: grid;
-                grid-template-columns: auto 1fr auto;
-                grid-gap: $gap;
-                border-bottom: 1px solid black;
-                input {
-                    border: none;
-                    background-color: whitesmoke;
-                }
-            }
-        }
     }
 }
