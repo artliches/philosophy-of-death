@@ -10,29 +10,62 @@
         <input type="radio" name="gender">
       </span>
     </span>
+    <span class="nickname-section">
+        <input placeholder="arc survivor" class="nickname" type="text">
+    </span>
     <ng-container *ngIf="show">
-        <small>WHEN YOU ARE NAMED, GAIN +1 <strong>SURVIVAL</strong></small>
+        <small style="margin-bottom: 0.5rem;">WHEN YOU ARE NAMED, GAIN +1 <strong>SURVIVAL</strong></small>
         <span class="xp-section bottom-border">
-            <small><strong>HUNT XP</strong></small>
-            <span class="checkbox-section">
-                <input type="checkbox">
-                <input class="heavy" type="checkbox">
-                <input type="checkbox">
-                <input type="checkbox">
-                <input type="checkbox">
-                <input type="checkbox">
-                <input type="checkbox">
-                <input type="checkbox">
+            <small class="xp-title"><strong>HUNT XP</strong></small>
+            <span class="checkbox-section-layout">
+                <span class="checkbox-section">
+                    <input type="checkbox">
+                    <input class="heavy" type="checkbox">
+                    <input type="checkbox">
+                    <input type="checkbox">
+                    <input type="checkbox">
+                    <input type="checkbox">
+                    <input type="checkbox">
+                    <input type="checkbox">
+                </span>
+                <span class="checkbox-section">
+                    <input type="checkbox">
+                    <input type="checkbox">
+                    <input type="checkbox">
+                    <input type="checkbox">
+                    <input type="checkbox">
+                    <input type="checkbox">
+                    <input type="checkbox">
+                    <input class="heavy" type="checkbox">
+                </span>
             </span>
-            <span class="checkbox-section">
-                <input type="checkbox">
-                <input type="checkbox">
-                <input type="checkbox">
-                <input type="checkbox">
-                <input type="checkbox">
-                <input type="checkbox">
-                <input type="checkbox">
-                <input class="heavy" type="checkbox">
+            <span class="xp-info">
+                <span>
+                    <div class="black-square"></div>
+                    <small>ADOPT A PHILOSOPHY</small>
+                </span>
+                <span>
+                    <div class="black-square"></div>
+                    <div class="black-square"></div>
+                    <small>RANK +</small>
+                </span>
+                <span>
+                    <div class="black-square"></div>
+                    <div class="black-square"></div>
+                    <div class="black-square"></div>
+                    <small>RANK +</small>
+                </span>
+                <span>
+                    <div class="black-square"></div>
+                    <div class="black-square"></div>
+                    <div class="black-square"></div>
+                    <div class="black-square"></div>
+                    <small>RANK +</small>
+                </span>
+                <span>
+                    <div class="black-square border-only"></div>
+                    <small>RETIRED</small>
+                </span>
             </span>
         </span>
         <span class="weapon-section">
