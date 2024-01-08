@@ -3,6 +3,9 @@
 .insane-layout {
     border-bottom: 1px solid black;
     margin-bottom: $gap;
+    .flex-column > strong, .subtitle-section {
+        font-size: .9rem;
+    }
 }
 
 .corpus-layout {

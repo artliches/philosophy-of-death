@@ -52,6 +52,16 @@ body {
     grid-gap: $gap;
 }
 
+.three-column-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: $gap;
+}
+
+.center-text {
+    text-align: center;
+}
+
 .heavy {
     width: 13.4px;
     height: 13.4px;

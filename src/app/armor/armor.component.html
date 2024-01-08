@@ -3,7 +3,7 @@
         <strong (click)="toggleCollapse()">ARMOR & INJURIES</strong>
     </span>
     <span *ngIf="show" class="armor-layout">
-        <span class="insane-layout two-column-grid">
+        <span class="insane-layout three-column-grid">
             <span class="flex-column">
                 <span class="subtitle-section">
                     <strong>BRAIN</strong>
@@ -14,12 +14,18 @@
                 </span>
                 <input placeholder="0" type="number" name="ins">
                 <label for="ins"><small>INSTANITY</small></label>
-                <small>IF 3+, YOU ARE <strong>INSANE</strong></small>
+                <small class="center-text">IF 3+, YOU ARE <strong>INSANE</strong></small>
             </span>
             <span class="flex-column">
                 <strong>TORMENT</strong>
                 <input placeholder="0" type="number" name="tor">
-                <label for="tor"><small>WHEN ROLLING FOR BRAIN TRAUMA, SUBTRACT <strong>TORMENT</strong> FROM RESULT</small></label>
+                <label for="tor"><small>SUBTRACT FROM BRAIN TRAUMA RESULTS</small></label>
+            </span>
+
+            <span class="flex-column">
+                <strong>S. PRESSURE</strong>
+                <input type="number" placeholder="0" name="spre">
+                <label for="spre"><small>SUBTRACT FROM SEVERE INJURY RESULTS</small></label>
             </span>
         </span>
         <span class="corpus-layout head">
