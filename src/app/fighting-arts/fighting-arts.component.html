@@ -7,13 +7,13 @@
         <div class="pod-inner-section sub-section flex-column">
             <div class="fa-header-layout">
                 <small>FIGHTING ART</small>
-                <small (click)="chosenFightingArt = ''"><strong>X</strong></small>
+                <small *ngIf="chosenFightingArt !== ''" (click)="chosenFightingArt = ''"><strong>X</strong></small>
             </div>
             <span class="chosen-fa-section">
-                <strong class="chosen-fa flex-column">
+                <div class="chosen-fa flex-column">
                     <strong class="fa-name">{{chosenFightingArt.name ? chosenFightingArt.name : 'NONE'}}</strong>
-                    <small *ngIf="chosenFightingArt !== 'NONE'">{{chosenFightingArt.descrip}}</small>
-                </strong>
+                    <small class="fa-descrip" *ngIf="chosenFightingArt !== 'NONE'">{{chosenFightingArt.descrip}}</small>
+                </div>
                 <strong class="fa-toggle" (click)="showFightingArts = !showFightingArts">
                     {{showFightingArts ? "-" : "+"}}
                 </strong>
@@ -33,13 +33,13 @@
         <div class="pod-inner-section sub-section secret flex-column">
             <div class="fa-header-layout">
                 <small>SECRET FIGHTING ART</small>
-                <small (click)="chosenSecretArt = ''"><strong>X</strong></small>
+                <small *ngIf="chosenSecretArt !== ''" (click)="chosenSecretArt = ''"><strong>X</strong></small>
             </div>
             <span class="chosen-fa-section">
-                <strong class="chosen-fa flex-column">
+                <div class="chosen-fa flex-column">
                     <strong class="fa-name">{{chosenSecretArt.name ? chosenSecretArt.name : 'NONE'}}</strong>
-                    <small [innerHTML]="chosenSecretArt.descrip" *ngIf="chosenSecretArt !== 'NONE'"></small>
-                </strong>
+                    <small class="fa-descrip" [innerHTML]="chosenSecretArt.descrip" *ngIf="chosenSecretArt !== 'NONE'"></small>
+                </div>
                 <strong class="fa-toggle" (click)="showSecretArts = !showSecretArts">
                     {{showSecretArts ? "-" : "+"}}
                 </strong>

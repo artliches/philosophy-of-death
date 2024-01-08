@@ -134,7 +134,7 @@ export class FightingArtsComponent implements OnInit {
     {
       name: 'BEAST OF CARATOSIS',
       descrip: `
-      <p>You may <strong>Concentrate</strong>. If you do, perform Beast of Caratosis at the start of your next act.</p>
+      You may <strong>Concentrate</strong>. If you do, perform Beast of Caratosis at the start of your next act.
       <p><strong>Beast of Caratosis:</strong> You reach into the dream and disappear in a shimmer of heat.</p>
       <p>Place your survivor adjacent to the monster. Activate a weapon in your grid and attack the monster. For this attack, your attack speed is equal to your red affinities, you hit automatically, and you gain strength equal to double your red affinities. Then, gain +6 Hunt XP.</p>
       `
