@@ -1,0 +1,25 @@
+@import '../../assets/vars.scss';
+.pod-inner-section {
+    .title-section {
+        grid-template-columns: 1fr auto;
+        place-items: baseline;
+        .total-courage {
+            span {
+                margin-left: $gap;
+                color: grey;
+                font-family: 'CATS Goth';
+                font-size: .8rem;
+            }
+        }
+    }
+    .courage-layout {
+        display: grid;
+        grid-template-columns: 1fr;
+        place-items: center;
+        .info > span {
+            display: flex;
+            flex-direction: row;
+            gap: $gap;
+        }
+    }
+}

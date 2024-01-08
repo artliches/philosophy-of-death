@@ -1,0 +1,31 @@
+<div class="pod-inner-section">
+    <span (click)="toggleCollapse()" class="title-section">
+        <strong>COURAGE</strong>
+        <small class="total-courage">
+            <strong>TOTAL COURAGE:</strong>
+            <span>{{courageCount}}</span>
+        </small>
+    </span>
+    <span *ngIf="show" class="courage-layout">
+        <span class="checkbox-section">
+            <input
+                [(ngModel)]="boxes.checked"
+                (ngModelChange)="checkChanged()"
+                *ngFor="let boxes of courageCheckboxes; index as i"
+                [ngClass]="{
+                    'heavy': i === 2 || i === 7
+                }" type="checkbox">
+        </span>
+        <span class="info two-column-grid">
+            <span>
+                <div class="black-square"></div>
+                <small>BOLD</small>
+            </span>
+            <span>
+                <div class="black-square"></div>
+                <div class="black-square"></div>
+                <small>SEE THE TRUTH</small>
+            </span>
+        </span>
+    </span>
+</div>

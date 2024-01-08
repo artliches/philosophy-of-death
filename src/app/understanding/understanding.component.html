@@ -1,0 +1,31 @@
+<div class="pod-inner-section">
+    <span (click)="toggleCollapse()" class="title-section">
+        <strong>UNDERSTANDING</strong>
+        <small class="total-understanding">
+            <strong>TOTAL UNDERSTANDING:</strong>
+            <span>{{understandingCount}}</span>
+        </small>
+    </span>
+    <span *ngIf="show" class="understanding-layout">
+        <span class="checkbox-section">
+            <input
+                [(ngModel)]="boxes.checked"
+                (ngModelChange)="checkChanged()"
+                *ngFor="let boxes of understandingCheckboxes; index as i"
+                [ngClass]="{
+                    'heavy': i === 2 || i === 7
+                }" type="checkbox">
+        </span>
+        <span class="info two-column-grid">
+            <span>
+                <div class="black-square"></div>
+                <small>INSIGHT</small>
+            </span>
+            <span>
+                <div class="black-square"></div>
+                <div class="black-square"></div>
+                <small>WHITE SECRET</small>
+            </span>
+        </span>
+    </span>
+</div>

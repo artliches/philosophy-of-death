@@ -1,0 +1,59 @@
+@import '../../assets/vars.scss';
+.pod-inner-section {
+    .title-section {
+        grid-template-columns: 1fr auto;
+        place-items: baseline;
+    }
+    .arts-layout {
+        gap: $gap;
+    }
+    &.sub-section {
+        background-color: black;
+        color: white;
+        gap: $gap;
+        &.secret {
+            background-color: #e91e63;
+        }
+        .fa-header-layout {
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            place-content: center start;
+            gap: 1rem;
+        }
+        .chosen-fa-section {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            grid-gap: $gap;
+            .fa-toggle {
+                font-size: 1.5rem;
+                grid-column: 2;
+            }
+            .chosen-fa {
+                gap: $gap;
+                strong {
+                    border-bottom: 1px solid white;
+                }
+            }
+        }
+    }
+    &.fa-style {
+        padding: $gap;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        column-gap: $gap;
+        place-items: center start;
+
+        &.chosen {
+            background-color: goldenrod;
+        }
+        .select-fa {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.fa-choices {
+    display: flex;
+    flex-direction: column;
+    gap: $gap;
+}

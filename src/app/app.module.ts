@@ -8,6 +8,9 @@ import { StatsComponent } from './stats/stats.component';
 import { SurvivalComponent } from './survival/survival.component';
 import { NameXpComponent } from './name-xp/name-xp.component';
 import { FormsModule } from '@angular/forms';
+import { CourageComponent } from './courage/courage.component';
+import { UnderstandingComponent } from './understanding/understanding.component';
+import { FightingArtsComponent } from './fighting-arts/fighting-arts.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,10 @@ import { FormsModule } from '@angular/forms';
     ArmorComponent,
     StatsComponent,
     SurvivalComponent,
-    NameXpComponent
+    NameXpComponent,
+    CourageComponent,
+    UnderstandingComponent,
+    FightingArtsComponent
   ],
   imports: [
     BrowserModule,
