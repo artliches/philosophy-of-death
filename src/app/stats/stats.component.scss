@@ -1,13 +1,20 @@
 @import '../../assets/vars.scss';
 
 .title-section {
-    grid-template-columns: 1fr 15%;
+    grid-template-columns: 1fr 20%;
+    place-items: end start;
     grid-area: tit;
+    .big-small {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+    }
     input {
         text-align: center;
         width: 40%;
         border: none;
         background-color: whitesmoke;
+        margin-top:.5rem;
     }
 }
 .stats-grid {

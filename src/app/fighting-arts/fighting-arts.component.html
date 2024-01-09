@@ -1,9 +1,10 @@
 <div class="pod-inner-section">
     <span class="title-section">
-        <strong>(SECRET) FIGHTING ARTS</strong>
+        <strong (click)="show = !show">(SECRET)FIGHTING ARTS</strong>
         <small>MAX 1 OF EACH</small>
     </span>
-    <span class="arts-layout flex-column">
+    <span *ngIf="show" class="arts-layout flex-column">
+        <small>WHEN GAINED → <strong>VAULTLESS</strong></small>
         <div class="pod-inner-section sub-section flex-column">
             <div class="fa-header-layout">
                 <small>FIGHTING ART</small>
