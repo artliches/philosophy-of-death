@@ -39,35 +39,95 @@ small > strong {
 
 .xp-section {
     display: grid;
-    grid-template-columns: min-content 1fr;
-    grid-template-rows: min-content 1fr;
+    grid-template-columns: auto 1fr min-content;
+    grid-template-rows: min-content 1fr min-content;
     column-gap: $gap;
+    row-gap: $smaller-gap;
     .xp-title {
         grid-column: 1;
         grid-row: 1;
     }
-    .checkbox-section-layout {
+    .curr-xp {
+        font-size: 1rem;
+        font-family: 'CATS Goth';
+        grid-column: 2;
+        grid-row: 1;
+    }
+    .add {
+        grid-column: 3;
+        grid-row: 2;
+    }
+    .minus {
         grid-column: 1;
         grid-row: 2;
     }
-    .xp-info {
-        place-self: center end;
+    .checkbox-section-layout {
         grid-column: 2;
-        grid-row: 1 / span 2;
-        display: flex;
-        flex-direction: column;
-        gap: .1rem;
+        grid-row: 2;
+        place-self: center;
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-gap: $smaller-gap;
+    }
+    .xp-info {
+        grid-column: 1 / span 3;
+        grid-row: 3;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, min-content);
+        grid-gap: $smaller-gap;
+        .long-rank {
+            grid-column: span 2;
+            place-self: center;
+        }
         span {
             display: flex;
             flex-direction: row;
-            gap: $gap;
+            gap: $gap / 2;
         }
+    }
+}
+
+.weapon-title {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: $gap;
+    place-items: center start;
+    .curr-weap {
+        font-family: 'CATS Goth';
     }
 }
 
 .weapon-checkbox-layout {
     display: grid;
-    grid-template-columns: repeat(2, auto);
+    grid-template-columns: min-content 1fr min-content;
+    grid-template-rows: 1fr;
+    place-items: center;
+    .minus {
+        grid-column: 1;
+        grid-row: 1 / span 2;
+    }
+    .add {
+        grid-column: 4;
+        grid-row: 1 / span 2;
+    }
+    .weapon-choice {
+        grid-column: 2;
+        grid-row: 1;
+        small {
+            font-weight: 800;
+        }
+        select {
+            font-size: .8rem;
+        }
+    }
+    .checkbox-section {
+        grid-column: 2;
+        grid-row: 2;
+        display: flex;
+        gap: $smaller-gap;
+    }
 }
 
 .mastery-info {

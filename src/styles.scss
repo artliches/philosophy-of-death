@@ -26,6 +26,9 @@ body {
     small {
         font-size: .5em;
         vertical-align: middle;
+        &.bigger {
+            font-size: .8rem;
+        }
     }
 
     .pod-inner-section {
@@ -78,14 +81,22 @@ body {
 }
 
 .black-square {
+    user-select: none;
     width: 13.4px;
     height: 13.4px;
-    background-color: black;
     &.border-only {
         background-color: white;
-        width: 10.4px;
-        height: 10.4px;
-        border: 3px solid black;
+        width: 12.4px;
+        height: 12.4px;
+        border: 1px solid black;
+        &.heavy {
+            width: 10.4px;
+            height: 10.4px;
+            border: 2px solid black;
+        }
+    }
+    &.filled {
+        background-color: black;
     }
 }
 
@@ -107,4 +118,17 @@ select {
 
 .big-small {
     font-size: 1.5em;
+}
+
+.square-button {
+    height: 42px;
+    width: 42px;
+    background-color: black;
+    color: white;
+    font-size: 30px;
+    font-family: 'CATS Goth';
+    border: none;
+    display: grid;
+    place-items: center;
+    border-radius: $input-radius;
 }
