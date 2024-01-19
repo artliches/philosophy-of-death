@@ -1,13 +1,21 @@
 <div class="pod-inner-section">
     <span class="survival-section">
-      <span (click)="toggleCollapse()" class="title-section">
-        <strong>SURVIVAL</strong>
+      <span class="title-section">
+        <strong (click)="toggleCollapse()">SURVIVAL</strong>
         <span>
-          <input type="checkbox" name="noSpend">
+          <div 
+            (click)="noSpend = !noSpend"
+            [ngClass]="{'filled': noSpend}"
+            name="noSpend"
+            class="black-square border-only"></div>
           <label for="noSpend"><small>CANNOT SPEND</small></label>
         </span>
         <span>
-          <input type="checkbox" name="noGain">
+          <div
+            (click)="noGain = !noGain"
+            [ngClass]="{'filled': noGain}"
+            name="noGain"
+            class="black-square border-only"></div>
           <label for="noGain"><small>CANNOT GAIN</small></label>
         </span>
       </span>
@@ -25,27 +33,47 @@
         </span>
         <span class="survival-actions-section flex-column">
           <span>
-            <input checked type="checkbox" id="dodge" name="dodge"/>
+            <div
+            (click)="dodge = !dodge"
+            [ngClass]="{'filled': dodge}"
+            name="dodge"
+            class="black-square border-only"></div>
             <label for="dodge"><small>DODGE</small></label>
           </span>
 
           <span>
-            <input type="checkbox" id="encourage" name="encourage"/>
+            <div
+            (click)="encourage = !encourage"
+            [ngClass]="{'filled': encourage}"
+            name="encourage"
+            class="black-square border-only"></div>
             <label for="encourage"><small>ENCOURAGE</small></label>
           </span>
 
           <span>
-            <input type="checkbox" id="surge" name="surge"/>
+            <div
+            (click)="surge = !surge"
+            [ngClass]="{'filled': surge}"
+            name="surge"
+            class="black-square border-only"></div>
             <label for="surge"><small>SURGE</small></label>
           </span>
 
           <span>
-            <input type="checkbox" id="dash" name="dash"/>
+            <div
+            (click)="dash = !dash"
+            [ngClass]="{'filled': dash}"
+            name="dash"
+            class="black-square border-only"></div>
             <label for="dash"><small>DASH</small></label>
           </span>
 
           <span>
-            <input type="checkbox" id="fist" name="fist"/>
+            <div
+            (click)="fist = !fist"
+            [ngClass]="{'filled': fist}"
+            name="fist"
+            class="black-square border-only"></div>
             <label for="fist"><small>FIST PUMP</small></label>
           </span>
         </span>

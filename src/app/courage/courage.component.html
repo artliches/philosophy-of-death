@@ -8,22 +8,28 @@
     </span>
     <span *ngIf="show" class="courage-layout">
         <span class="checkbox-section">
-            <input
-                [(ngModel)]="boxes.checked"
-                (ngModelChange)="checkChanged()"
-                *ngFor="let boxes of courageCheckboxes; index as i"
-                [ngClass]="{
-                    'heavy': i === 2 || i === 7
-                }" type="checkbox">
+            <button (click)="courageCount = courageCount === 9 ? courageCount = 9 : courageCount + 1" class="square-button add"><strong>+</strong></button>
+            <button (click)="courageCount = courageCount === 0 ? courageCount = 0 : courageCount - 1" class="square-button minus"><strong>-</strong></button>
+            <span class="checkboxes">
+                <div
+                    class="black-square border-only"
+                    *ngFor="let box of courageCheckboxes; index as i"
+                    [ngClass]="{
+                        'heavy': i === 2 || i === 8,
+                        'filled': i+1 <= courageCount
+                    }"
+                >
+                </div>
+            </span>
         </span>
         <span class="info two-column-grid">
             <span>
-                <div class="black-square"></div>
+                <div class="black-square filled"></div>
                 <small>BOLD</small>
             </span>
             <span>
-                <div class="black-square"></div>
-                <div class="black-square"></div>
+                <div class="black-square filled"></div>
+                <div class="black-square filled"></div>
                 <small>SEE THE TRUTH</small>
             </span>
         </span>

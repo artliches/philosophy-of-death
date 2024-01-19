@@ -15,7 +15,26 @@
     .courage-layout {
         display: grid;
         grid-template-columns: 1fr;
+        grid-gap: $gap;
         place-items: center;
+        .checkbox-section {
+            display: grid;
+            grid-template-columns: min-content 1fr min-content;
+            grid-template-rows: 1fr;
+            grid-gap: $gap;
+            align-items: center;
+            .minus {
+                grid-area: 1 / 1;
+            }
+            .add {
+                grid-area: 1 / 3;
+            }
+            .checkboxes {
+                grid-area: 1 / 2;
+                display: flex;
+                gap: $smaller-gap;
+            }
+        }
         .info > span {
             display: flex;
             flex-direction: row;

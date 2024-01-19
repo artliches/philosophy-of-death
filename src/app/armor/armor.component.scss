@@ -30,31 +30,28 @@
     .injury-layout {
         grid-area: injuries;
         display: grid;
-        .injury-descrip-layout {
+        grid-gap: $gap;
+        .injury-checkbox-layout {
+            &:not(:last-of-type) {
+                padding-bottom: $smaller-gap;
+                border-bottom: 1px solid gray;
+            }
             display: grid;
+            grid-gap: $smaller-gap;
             grid-template-columns: auto 1fr;
             grid-template-rows: repeat(2, auto);
+            align-items: center;
             grid-template-areas:
-                "check  label"
-                ".      descrip";
-            label {
+                "check      label"
+                "descrip    descrip";
+            .flex-row {
+                grid-area: check;
+            }
+            .injury-name {
                 grid-area: label;
-                place-self: center start;
             }
-            small {
+            .injury-descrip {
                 grid-area: descrip;
-            }
-            &.multi-check {
-                grid-template-columns: repeat(2, auto) 1fr;
-                grid-template-areas: 
-                    "check1     check2      label"
-                    ".          descrip     descrip";
-                &.five {
-                    grid-template-columns: repeat(5, auto) 1fr;
-                    grid-template-areas: 
-                        "1     2    3       4       5      label"
-                        ".     descrip     descrip  descrip     descrip     descrip";
-                }
             }
         }
     }
@@ -67,10 +64,13 @@
 
 .flex-column {
     align-items: center;
+    .checkbox-label-layout {
+        grid-gap: $smaller-gap;
+    }
     .subtitle-section, .checkbox-label-layout {
         display: grid;
         grid-template-columns: 1fr auto;
-
+        align-items: center;
         &.multiInjury {
             grid-template-columns: repeat(2, auto);
             grid-template-rows: repeat(2, auto);

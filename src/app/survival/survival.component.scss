@@ -3,6 +3,12 @@
 .survival-section {
     .title-section {
         grid-template-columns: 1fr repeat(2, auto);
+        grid-gap: $gap;
+        >span {
+            display: flex;
+            align-items: center;
+            gap: $smaller-gap;
+        }
     }
     .survival-layout {
         display: grid;
@@ -28,6 +34,13 @@
                 label {
                     place-self: start center;
                 }
+            }
+        }
+        .survival-actions-section {
+            >span {
+                display: flex;
+                align-items: center;
+                gap: $smaller-gap;
             }
         }
     }

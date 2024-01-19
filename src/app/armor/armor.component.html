@@ -8,7 +8,11 @@
                 <span class="subtitle-section">
                     <strong>BRAIN</strong>
                     <span class="checkbox-label-layout">
-                        <input type="checkbox" name="lightBrain">
+                        <div 
+                        (click)="lBrain = !lBrain"
+                        [ngClass]="{'filled': lBrain}"
+                        name="lightBrain"
+                        class="black-square border-only"></div>
                         <label for="lightBrain">L</label>
                     </span>
                 </span>
@@ -31,33 +35,29 @@
         <span class="corpus-layout head">
             <span class="subtitle-section">
                 <strong>HEAD</strong>
-                <span>
-                    <input class="heavy" type="checkbox" name="heavyHead">
+                <span class="flex-row">
+                    <div 
+                        (click)="hHead = !hHead"
+                        [ngClass]="{'filled': hHead}"
+                        name="heavyHead"
+                        class="black-square border-only heavy">
+                    </div>
                     <label for="heavyHead">H</label>
                 </span>
             </span>
             <input class="armor" placeholder="0" type="number" name="head">
-            <span class="injury-layout flex-column">
-                <span class="injury-descrip-layout">
-                    <input type="checkbox" name="iHem">
-                    <label for="iHem"><small><strong>INTRACRANIAL HEMORRHAGE</strong></small></label>
-                    <small>no gain or spend survival.</small>
-                </span>
-                <span class="injury-descrip-layout">
-                    <input type="checkbox" name="deaf">
-                    <label for="deaf"><small><strong>DEAF</strong></small></label>
-                    <small>-1 evasion.</small>
-                </span>
-                <span class="injury-descrip-layout multi-check">
-                    <input class="check1" type="checkbox" name="blind1">
-                    <input class="check2" type="checkbox" name="blind2">
-                    <label for="blind2"><small><strong>BLIND</strong></small></label>
-                    <small>-1 accuracy / -4 accuracy & retire.</small>
-                </span>
-                <span class="injury-descrip-layout">
-                    <input type="checkbox" name="sJaw">
-                    <label for="sJaw"><small><strong>SHATTERED JAW</strong></small></label>
-                    <small>no consume or encourage.</small>
+            <span class="injury-layout">
+                <span *ngFor="let injury of headInjuries" class="injury-checkbox-layout">
+                    <span class="flex-row">
+                        <div
+                            *ngFor="let box of injury.checkboxes" 
+                            (click)="box.checked= !box.checked"
+                            [ngClass]="{'filled': box.checked}"
+                            class="black-square border-only">
+                        </div>
+                    </span>
+                    <small class="injury-name"><strong>{{injury.id}}</strong></small>
+                    <small class="injury-descrip">{{injury.descrip}}</small>
                 </span>
             </span>
         </span>
@@ -65,41 +65,33 @@
         <span class="corpus-layout arm">
             <span class="subtitle-section">
                 <strong>ARMS</strong>
-                <span class="checkbox-label-layout">
-                    <input type="checkbox" name="lightArm">
-                    <label for="lightArm">L</label>
-
-                    <input class="heavy" type="checkbox" name="heavyArm">
-                    <label for="heavyArm">H</label>
+                <span class="flex-row">
+                    <span class="flex-row" *ngFor="let loc of arms">
+                        <div 
+                            (click)="loc.checked = !loc.checked"
+                            [ngClass]="{
+                                'filled': loc.checked,
+                                'heavy': loc.id === 'heavy'
+                            }"
+                            class="black-square border-only">
+                        </div>
+                        <label>{{loc.id === 'light' ? 'L' : 'H'}}</label>
+                    </span>
                 </span>
             </span>
             <input class="armor" placeholder="0" type="number" name="arm">
-            <span class="injury-layout flex-column">
-                <span class="injury-descrip-layout multi-check">
-                    <input class="check1" type="checkbox" name="disArm1">
-                    <input class="check2" type="checkbox" name="disArm2">
-                    <label for="disArm"><small><strong>DISMEMBERED ARM</strong></small></label>
-                    <small>no two-handed / no weapons.</small>
-                </span>
-                <span class="injury-descrip-layout">
-                    <input type="checkbox" name="rup">
-                    <label for="rup"><small><strong>RUPTURED MUSCLE</strong></small></label>
-                    <small>no fighting arts or knowledges.</small>
-                </span>
-                <span class="injury-descrip-layout multi-check five">
-                    <input type="checkbox" name="cont1">
-                    <input type="checkbox" name="cont2">
-                    <input type="checkbox" name="cont3">
-                    <input type="checkbox" name="cont4">
-                    <input type="checkbox" name="cont5">
-                    <label for="cont5"><small><strong>CONTRACTURE</strong></small></label>
-                    <small>-1 accuracy.</small>
-                </span>
-                <span class="injury-descrip-layout multi-check">
-                    <input type="checkbox" name="bArm1">
-                    <input type="checkbox" name="dArm2">
-                    <label for="bArm2"><small><strong>BROKEN ARM</strong></small></label>
-                    <small>-1 accuracy & -1 strength.</small>
+            <span class="injury-layout">
+                <span *ngFor="let injury of armsInjuries" class="injury-checkbox-layout">
+                    <span class="flex-row">
+                        <div
+                            *ngFor="let box of injury.checkboxes" 
+                            (click)="box.checked= !box.checked"
+                            [ngClass]="{'filled': box.checked}"
+                            class="black-square border-only">
+                        </div>
+                    </span>
+                    <small class="injury-name"><strong>{{injury.id}}</strong></small>
+                    <small class="injury-descrip">{{injury.descrip}}</small>
                 </span>
             </span>
         </span>
@@ -107,38 +99,33 @@
         <span class="corpus-layout body">
             <span class="subtitle-section">
                 <strong>BODY</strong>
-                <span class="checkbox-label-layout">
-                    <input type="checkbox" name="lightBody">
-                    <label for="lightBody">L</label>
-
-                    <input class="heavy" type="checkbox" name="heavyBody">
-                    <label for="heavyBody">H</label>
+                <span class="flex-row">
+                    <span class="flex-row" *ngFor="let loc of body">
+                        <div 
+                            (click)="loc.checked = !loc.checked"
+                            [ngClass]="{
+                                'filled': loc.checked,
+                                'heavy': loc.id === 'heavy'
+                            }"
+                            class="black-square border-only">
+                        </div>
+                        <label>{{loc.id === 'light' ? 'L' : 'H'}}</label>
+                    </span>
                 </span>
             </span>
             <input class="armor" placeholder="0" type="number" name="body">
-            <span class="injury-layout flex-column">
-                <span class="injury-descrip-layout multi-check five">
-                    <input type="checkbox" name="gape1">
-                    <input type="checkbox" name="gape2">
-                    <input type="checkbox" name="gape3">
-                    <input type="checkbox" name="gape4">
-                    <input type="checkbox" name="gape5">
-                    <label for="gape5"><small><strong>GAPING CHEST WOUND</strong></small></label>
-                    <small>-1 strength.</small>
-                </span>
-                <span class="injury-descrip-layout">
-                    <input type="checkbox" name="dBack">
-                    <label for="dBack"><small><strong>DESTROYED BACK</strong></small></label>
-                    <small>-2 movement & no gear with +2 strength.</small>
-                </span>
-                <span class="injury-descrip-layout multi-check five">
-                    <input type="checkbox" name="rib1">
-                    <input type="checkbox" name="rib2">
-                    <input type="checkbox" name="rib3">
-                    <input type="checkbox" name="rib4">
-                    <input type="checkbox" name="rib5">
-                    <label for="rib5"><small><strong>BROKEN RIB</strong></small></label>
-                    <small>-1 speed.</small>
+            <span class="injury-layout">
+                <span *ngFor="let injury of bodyInjuries" class="injury-checkbox-layout">
+                    <span class="flex-row">
+                        <div
+                            *ngFor="let box of injury.checkboxes" 
+                            (click)="box.checked= !box.checked"
+                            [ngClass]="{'filled': box.checked}"
+                            class="black-square border-only">
+                        </div>
+                    </span>
+                    <small class="injury-name"><strong>{{injury.id}}</strong></small>
+                    <small class="injury-descrip">{{injury.descrip}}</small>
                 </span>
             </span>
         </span>
@@ -146,39 +133,33 @@
         <span class="corpus-layout waist">
             <span class="subtitle-section">
                 <strong>WAIST</strong>
-                <span class="checkbox-label-layout">
-                    <input type="checkbox" name="lightWaist">
-                    <label for="lightWaist">L</label>
-
-                    <input class="heavy" type="checkbox" name="heavyWaist">
-                    <label for="heavyWaist">H</label>
+                <span class="flex-row">
+                    <span class="flex-row" *ngFor="let loc of waist">
+                        <div 
+                            (click)="loc.checked = !loc.checked"
+                            [ngClass]="{
+                                'filled': loc.checked,
+                                'heavy': loc.id === 'heavy'
+                            }"
+                            class="black-square border-only">
+                        </div>
+                        <label>{{loc.id === 'light' ? 'L' : 'H'}}</label>
+                    </span>
                 </span>
             </span>
             <input class="armor" placeholder="0" type="number" name="waist">
-            <span class="injury-layout flex-column">
-                <span class="injury-descrip-layout">
-                    <input type="checkbox" name="iPro">
-                    <label for="iPro"><small><strong>INTESTINAL PROLAPSE</strong></small></label>
-                    <small>no gear on waist.</small>
-                </span>
-                <span class="injury-descrip-layout multi-check five">
-                    <input type="checkbox" name="warp1">
-                    <input type="checkbox" name="warp2">
-                    <input type="checkbox" name="warp3">
-                    <input type="checkbox" name="warp4">
-                    <input type="checkbox" name="warp5">
-                    <label for="warp5"><small><strong>WARPED PELVIS</strong></small></label>
-                    <small>-1 luck.</small>
-                </span>
-                <span class="injury-descrip-layout">
-                    <input type="checkbox" name="dGen">
-                    <label for="dGen"><small><strong>DESTROYED GENITALS</strong></small></label>
-                    <small>no intimacy.</small>
-                </span>
-                <span class="injury-descrip-layout">
-                    <input type="checkbox" name="bHip">
-                    <label for="bHip"><small><strong>BROKEN HIP</strong></small></label>
-                    <small>no dodge & -1 movement.</small>
+            <span class="injury-layout">
+                <span *ngFor="let injury of waistInjuries" class="injury-checkbox-layout">
+                    <span class="flex-row">
+                        <div
+                            *ngFor="let box of injury.checkboxes" 
+                            (click)="box.checked= !box.checked"
+                            [ngClass]="{'filled': box.checked}"
+                            class="black-square border-only">
+                        </div>
+                    </span>
+                    <small class="injury-name"><strong>{{injury.id}}</strong></small>
+                    <small class="injury-descrip">{{injury.descrip}}</small>
                 </span>
             </span>
         </span>
@@ -186,32 +167,33 @@
         <span class="corpus-layout leg">
             <span class="subtitle-section">
                 <strong>LEGS</strong>
-                <span class="checkbox-label-layout">
-                    <input type="checkbox" name="lightLeg">
-                    <label for="lightLeg">L</label>
-
-                    <input class="heavy" type="checkbox" name="heavyLeg">
-                    <label for="heavyLeg">H</label>
+                <span class="flex-row">
+                    <span class="flex-row" *ngFor="let loc of legs">
+                        <div 
+                            (click)="loc.checked = !loc.checked"
+                            [ngClass]="{
+                                'filled': loc.checked,
+                                'heavy': loc.id === 'heavy'
+                            }"
+                            class="black-square border-only">
+                        </div>
+                        <label>{{loc.id === 'light' ? 'L' : 'H'}}</label>
+                    </span>
                 </span>
             </span>
             <input class="armor" placeholder="0" type="number" name="leg">
-            <span class="injury-layout flex-column">
-                <span class="injury-descrip-layout multi-check">
-                    <input type="checkbox" name="dLeg1">
-                    <input type="checkbox" name="dLeg2">
-                    <label for="dLeg2"><small><strong>DISMEMBERED LEG</strong></small></label>
-                    <small>-2 movement & no dash / -4 movement & retire.</small>
-                </span>
-                <span class="injury-descrip-layout">
-                    <input type="checkbox" name="ham">
-                    <label for="ham"><small><strong>HAMSTRUNG</strong></small></label>
-                    <small>no fighting arts, abilities, or knowledges.</small>
-                </span>
-                <span class="injury-descrip-layout multi-check">
-                    <input type="checkbox" name="bLeg1">
-                    <input type="checkbox" name="bLeg2">
-                    <label for="bLeg2"><small><strong>BROKEN LEG</strong></small></label>
-                    <small>-1 movement.</small>
+            <span class="injury-layout">
+                <span *ngFor="let injury of legInjuries" class="injury-checkbox-layout">
+                    <span class="flex-row">
+                        <div
+                            *ngFor="let box of injury.checkboxes" 
+                            (click)="box.checked= !box.checked"
+                            [ngClass]="{'filled': box.checked}"
+                            class="black-square border-only">
+                        </div>
+                    </span>
+                    <small class="injury-name"><strong>{{injury.id}}</strong></small>
+                    <small class="injury-descrip">{{injury.descrip}}</small>
                 </span>
             </span>
         </span>

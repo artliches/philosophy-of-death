@@ -49,6 +49,12 @@ body {
     flex-direction: column;
 }
 
+.flex-row {
+    display: flex;
+    gap: $smaller-gap;
+    align-items: center;
+}
+
 .two-column-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -90,9 +96,9 @@ body {
         height: 12.4px;
         border: 1px solid black;
         &.heavy {
-            width: 10.4px;
-            height: 10.4px;
-            border: 2px solid black;
+            width: 9.4px;
+            height: 9.4px;
+            border: 3px solid black;
         }
     }
     &.filled {

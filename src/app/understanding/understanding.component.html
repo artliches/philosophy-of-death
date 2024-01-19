@@ -8,22 +8,28 @@
     </span>
     <span *ngIf="show" class="understanding-layout">
         <span class="checkbox-section">
-            <input
-                [(ngModel)]="boxes.checked"
-                (ngModelChange)="checkChanged()"
-                *ngFor="let boxes of understandingCheckboxes; index as i"
-                [ngClass]="{
-                    'heavy': i === 2 || i === 7
-                }" type="checkbox">
+            <button (click)="understandingCount = understandingCount === 9 ? understandingCount = 9 : understandingCount + 1" class="square-button add"><strong>+</strong></button>
+            <button (click)="understandingCount = understandingCount === 0 ? understandingCount = 0 : understandingCount - 1" class="square-button minus"><strong>-</strong></button>
+            <span class="checkboxes">
+                <div
+                    class="black-square border-only"
+                    *ngFor="let box of understandingCheckboxes; index as i"
+                    [ngClass]="{
+                        'heavy': i === 2 || i === 8,
+                        'filled': i+1 <= understandingCount
+                    }"
+                >
+                </div>
+            </span>
         </span>
         <span class="info two-column-grid">
             <span>
-                <div class="black-square"></div>
+                <div class="black-square filled"></div>
                 <small>INSIGHT</small>
             </span>
             <span>
-                <div class="black-square"></div>
-                <div class="black-square"></div>
+                <div class="black-square filled"></div>
+                <div class="black-square filled"></div>
                 <small>WHITE SECRET</small>
             </span>
         </span>

@@ -7,6 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SurvivalComponent implements OnInit {
   show: boolean = true;
+  noSpend: boolean = false;
+  noGain: boolean = false;
+  dodge: boolean = true;
+  encourage: boolean = false;
+  surge: boolean = false;
+  dash: boolean = false;
+  fist: boolean = false;
 
   constructor() { }
 
@@ -16,5 +23,4 @@ export class SurvivalComponent implements OnInit {
   toggleCollapse() {
     this.show = !this.show;
   }
-
 }
