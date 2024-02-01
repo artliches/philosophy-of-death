@@ -339,16 +339,19 @@ export class DisordersComponent implements OnInit {
   chooseDisorder(chosen: string, index: number) {
     // get chosenDisorder
     const chosenDisorder = this.disorders.find(x => x.name === chosen);
+    const alreadyChosen = this.chosenDisorders.findIndex(x => x.name === chosenDisorder!.name) !== -1;
 
-    if (this.chosenDisorders[index].name !== '') {
-      const prevChosen = this.disorders.find(x => x.name === this.chosenDisorders[index].name);
-      if (prevChosen) prevChosen.chosen = false;
-    }
-    if (chosenDisorder) {
-      chosenDisorder.chosen = true;
-      this.chosenDisorders[index] = chosenDisorder;
-
-      this.filteredDisorders = this.deepCopyArray(this.disorders);
+    if (!alreadyChosen) {
+      if (this.chosenDisorders[index].name !== '') {
+        const prevChosen = this.disorders.find(x => x.name === this.chosenDisorders[index].name);
+        if (prevChosen) prevChosen.chosen = false;
+      }
+      if (chosenDisorder) {
+        chosenDisorder.chosen = true;
+        this.chosenDisorders[index] = chosenDisorder;
+  
+        this.filteredDisorders = this.deepCopyArray(this.disorders);
+      }
     }
   }
 
