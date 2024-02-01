@@ -1,0 +1,40 @@
+<div class="pod-inner-section">
+    <span (click)="show = !show" class="title-section">
+        <strong>DISORDERS</strong>
+        <small>MAX 3</small>
+    </span>
+    <span *ngIf="show" class="disorder-layout flex-column">
+        <span *ngFor="let section of sectionsToShow; index as i">
+            <div class="black-section">
+                <div class="black-header-layout">
+                    <div class="black-chosen-layout">
+                        <strong class="black-chosen">
+                            <span>{{chosenDisorders[i].name ? chosenDisorders[i].name : 'NONE'}}</span>
+                            <span
+                                class="black-remove-toggle"
+                                *ngIf="chosenDisorders[i].name"
+                                (click)="removeDisorder(i)"
+                            >X</span>
+                        </strong>
+                        <small [innerHTML]="chosenDisorders[i].descrip" class="black-descrip">
+                        </small>
+                    </div>
+                    <strong (click)="contentSectionToShow[i] = !contentSectionToShow[i]; resetFilter()" class="black-toggle">
+                        {{contentSectionToShow[i] ? '-' : '+'}}
+                    </strong>
+                </div>
+                <div *ngIf="contentSectionToShow[i]" class="black-content">
+                    <input #disorderFilter (keyup)="filterDisorders(disorderFilter.value)" class="filter" type="text">
+                    <div
+                        *ngFor="let disorder of filteredDisorders"
+                        class="black-content-item"
+                        [ngClass]="{chosen: disorder.chosen}"
+                    >
+                        <span>{{disorder.name}}</span>
+                        <strong (click)="chooseDisorder(disorder.name, i)" class="black-toggle">+</strong>
+                    </div>
+                </div>
+            </div>
+        </span>
+    </span>
+</div>

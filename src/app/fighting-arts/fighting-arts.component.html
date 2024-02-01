@@ -8,20 +8,21 @@
         <div class="pod-inner-section sub-section flex-column">
             <div class="fa-header-layout">
                 <small>FIGHTING ART</small>
-                <small *ngIf="chosenFightingArt !== ''" (click)="chosenFightingArt = ''"><strong>X</strong></small>
+                <span *ngIf="chosenFightingArt !== ''" (click)="chosenFightingArt = ''"><strong>X</strong></span>
             </div>
             <span class="chosen-fa-section">
                 <div class="chosen-fa flex-column">
                     <strong class="fa-name">{{chosenFightingArt.name ? chosenFightingArt.name : 'NONE'}}</strong>
                     <small class="fa-descrip" *ngIf="chosenFightingArt !== 'NONE'">{{chosenFightingArt.descrip}}</small>
                 </div>
-                <strong class="fa-toggle" (click)="showFightingArts = !showFightingArts">
+                <strong class="fa-toggle" (click)="showFightingArts = !showFightingArts; resetFA()">
                     {{showFightingArts ? "-" : "+"}}
                 </strong>
             </span>
             <span *ngIf="showFightingArts" class="fa-choices">
+                <input #standardFA (keyup)="filterFA(standardFA.value)" type="text">
                 <div
-                    *ngFor="let fa of fightingArts"
+                    *ngFor="let fa of filteredFA"
                     [ngClass]="{'chosen': chosenFightingArt.name && chosenFightingArt.name === fa.name}"
                     class="pod-inner-section fa-style">
                         <span class="fa-name">{{fa.name}}</span>
@@ -29,31 +30,38 @@
                             +
                         </strong>
                 </div>
+                <div *ngIf="filteredFA.length === 0">
+                    NO FIGHTING ARTS FOUND!
+                </div>
             </span>
         </div>
         <div class="pod-inner-section sub-section secret flex-column">
             <div class="fa-header-layout">
                 <small>SECRET FIGHTING ART</small>
-                <small *ngIf="chosenSecretArt !== ''" (click)="chosenSecretArt = ''"><strong>X</strong></small>
+                <span *ngIf="chosenSecretArt !== ''" (click)="chosenSecretArt = ''"><strong>X</strong></span>
             </div>
             <span class="chosen-fa-section">
                 <div class="chosen-fa flex-column">
                     <strong class="fa-name">{{chosenSecretArt.name ? chosenSecretArt.name : 'NONE'}}</strong>
                     <small class="fa-descrip" [innerHTML]="chosenSecretArt.descrip" *ngIf="chosenSecretArt !== 'NONE'"></small>
                 </div>
-                <strong class="fa-toggle" (click)="showSecretArts = !showSecretArts">
+                <strong class="fa-toggle" (click)="showSecretArts = !showSecretArts; resetSA()">
                     {{showSecretArts ? "-" : "+"}}
                 </strong>
             </span>
             <span *ngIf="showSecretArts" class="fa-choices">
+                <input #secretFA (keyup)="filterSA(secretFA.value)" type="text">
                 <div
-                    *ngFor="let fa of secretFightArts"
+                    *ngFor="let fa of filteredSA"
                     [ngClass]="{'chosen': chosenSecretArt.name && chosenSecretArt.name === fa.name}"
                     class="pod-inner-section fa-style">
                         <span class="fa-name">{{fa.name}}</span>
                         <strong (click)="chooseFA(fa.name, true)" class="select-fa">
                             +
                         </strong>
+                </div>
+                <div *ngIf="filteredSA.length === 0">
+                    NO SECRET FIGHTING ARTS FOUND!
                 </div>
             </span>
         </div>

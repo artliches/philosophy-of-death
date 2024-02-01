@@ -1,0 +1,13 @@
+@import '../../assets/vars.scss';
+.pod-inner-section {
+    .title-section {
+        grid-template-columns: 1fr auto;
+        place-items: baseline;
+    }
+    .disorder-layout {
+        gap: $gap;
+        .black-toggle {
+            font-size: 1.5rem;
+        }
+    }
+}

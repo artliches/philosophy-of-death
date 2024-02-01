@@ -138,3 +138,52 @@ select {
     place-items: center;
     border-radius: $input-radius;
 }
+
+input[type='text'].filter {
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
+.black-section {
+    background-color: black;
+    color: white;
+    padding: 1rem;
+    border-radius: $inner-radius;
+    .black-header-layout {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-gap: $gap;
+        .black-chosen-layout {
+            display: flex;
+            flex-direction: column;
+            .black-chosen {
+                border-bottom: 1px solid white;
+                display: grid;
+                grid-template-columns: 1fr auto;
+            }
+            .black-descrip {
+                font-size: 0.8rem;
+            }
+        }
+    }
+    .black-content {
+        display: flex;
+        flex-direction: column;
+        gap: $gap;
+        .black-content-item {
+            padding: $gap;
+            border-radius: $inner-radius;
+            background-color: white;
+            color: black;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            place-items: center start;
+            &.chosen {
+                background-color: goldenrod;
+            }
+        }
+    }
+}

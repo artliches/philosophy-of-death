@@ -11,6 +11,8 @@ export class FightingArtsComponent implements OnInit {
   chosenSecretArt: any = '';
   showFightingArts: boolean = false;
   showSecretArts: boolean = false;
+  filteredFA: any;
+  filteredSA: any;
 
   fightingArts = [
     {
@@ -254,6 +256,8 @@ export class FightingArtsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.resetFA();
+    this.resetSA();
   }
 
   chooseFA(chosenFA: string, isSecret: boolean) {
@@ -262,6 +266,22 @@ export class FightingArtsComponent implements OnInit {
     } else {
       this.chosenFightingArt = this.fightingArts.find(x => x.name === chosenFA);
     }
+  }
+
+  filterSA(searchTerm: string) {
+    this.filteredSA = this.secretFightArts.filter(x => x.name.includes(searchTerm.toUpperCase()));
+  }
+
+  filterFA(searchTerm: string) {
+    this.filteredFA = this.fightingArts.filter(x => x.name.includes(searchTerm.toUpperCase()));
+  }
+
+  resetSA() {
+    this.filteredSA = this.secretFightArts;
+  }
+
+  resetFA() {
+    this.filteredFA = this.fightingArts;
   }
 
 }

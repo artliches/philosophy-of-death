@@ -16,9 +16,8 @@
         }
         .fa-header-layout {
             display: grid;
-            grid-template-columns: repeat(2, auto);
-            place-content: center start;
-            gap: 1rem;
+            grid-template-columns: 1fr auto;
+            place-content: center;
         }
         .chosen-fa-section {
             display: grid;

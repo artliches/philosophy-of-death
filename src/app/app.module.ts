@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { CourageComponent } from './courage/courage.component';
 import { UnderstandingComponent } from './understanding/understanding.component';
 import { FightingArtsComponent } from './fighting-arts/fighting-arts.component';
+import { DisordersComponent } from './disorders/disorders.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FightingArtsComponent } from './fighting-arts/fighting-arts.component';
     NameXpComponent,
     CourageComponent,
     UnderstandingComponent,
-    FightingArtsComponent
+    FightingArtsComponent,
+    DisordersComponent
   ],
   imports: [
     BrowserModule,
